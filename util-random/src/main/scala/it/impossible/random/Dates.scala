@@ -8,7 +8,7 @@ object Dates {
 
   private lazy val MAX_NO_OF_YEARS = 1000
 
-  private def max =  DateTime.now().plusYears(MAX_NO_OF_YEARS).getMillis
+  private def max = DateTime.now().plusYears(MAX_NO_OF_YEARS).getMillis
 
   def nextDate(): DateTime = new DateTime(Random.nextLong() % max)
 
