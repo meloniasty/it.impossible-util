@@ -8,26 +8,11 @@ object Dates {
 
   private lazy val MAX_NO_OF_YEARS = 1000
 
-  def nextDate(): DateTime = {
-    val max = DateTime.now().plusYears(MAX_NO_OF_YEARS).getMillis
+  private def max =  DateTime.now().plusYears(MAX_NO_OF_YEARS).getMillis
 
-    val r = Random.nextLong() % max
+  def nextDate(): DateTime = new DateTime(Random.nextLong() % max)
 
-    new DateTime(r)
-  }
+  def nextDateInPast(): DateTime = new DateTime(Random.nextLong() % DateTime.now().getMillis)
 
-  def nextDateInPast(): DateTime = {
-    val max = DateTime.now().getMillis
-
-    val r = Random.nextLong() % max
-
-    new DateTime(r)
-  }
-
-  def nextDateInFuture(): DateTime = {
-    val max = DateTime.now().plusYears(MAX_NO_OF_YEARS).getMillis
-    val now = DateTime.now().getMillis
-    val r = Random.nextInt((max - now).toInt)
-    new DateTime(now + r)
-  }
+  def nextDateInFuture(): DateTime = new DateTime(DateTime.now().getMillis + Random.nextInt((max - DateTime.now().getMillis).toInt))
 }
