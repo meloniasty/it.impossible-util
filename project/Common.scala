@@ -23,8 +23,6 @@ object Common {
         Resolver.sonatypeRepo("snapshots"),
         "Spray Releases" at "http://repo.spray.io",
         "Spray Nightlies" at "http://nightlies.spray.io",
-        "Zibra Releases" at "http://internal.zibratech.com:8081/nexus/content/repositories/releases",
-        "Zibra Snapshots" at "http://internal.zibratech.com:8081/nexus/content/repositories/snapshots",
         "Twitter Maven Repo" at "http://maven.twttr.com/"
       ),
       parallelExecution in Test := false,
